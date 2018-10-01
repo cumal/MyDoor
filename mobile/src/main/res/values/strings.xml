@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MyDoor</string>
+    <string name="ok">OK</string>
+    <string name="code">Code</string>
+    <string name="togglebuttonOpen">ToggleButton</string>
+    <string name="togglebuttonClose">ToggleButton</string>
+    <string name="open">Open/Close</string>
+    <string name="close">Close</string>
+    <string name="search">Search</string>
+    <string name="button">Search</string>
+</resources>
