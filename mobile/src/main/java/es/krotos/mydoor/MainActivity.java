@@ -36,9 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
         BTAdapter = BluetoothAdapter.getDefaultAdapter();
         if (!BTAdapter.isEnabled()) {
-            // El Bluetooth está apagado, solicitamos permiso al usuario para iniciarlo
             Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-            // REQUEST_ENABLE_BT es un valor entero que vale 1
             startActivityForResult(enableBtIntent, REQUEST_BLUETOOTH);
         }
 
@@ -52,9 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
         Set<BluetoothDevice> pairedDevices = BTAdapter.getBondedDevices();
         if (pairedDevices.size() > 0) {
-            // Loop through paired devices
             for (BluetoothDevice device : pairedDevices) {
-                // Add the name and address to an array adapter to show in a ListView
                 String dev_name = device.getName();
                 String dev_addre = device.getAddress();
                 devicesList.add(dev_name);
@@ -81,7 +77,6 @@ public class MainActivity extends AppCompatActivity {
         pairedListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                //mac_address = pairedListView.getItemAtPosition(i).toString();
                 mac_address = macList.get(i);
                 Intent intent = new Intent(MainActivity.this, Main3Activity.class);
                 intent.putExtra("MacDevice", mac_address);
@@ -99,22 +94,9 @@ public class MainActivity extends AppCompatActivity {
                 Log.i("BT", device.getName() + "\n" + device.getAddress());
                 ArrayAdapter mArrayAdapter = new ArrayAdapter(context,android.R.layout.simple_list_item_1, devicesList);
                 pairedListView.setAdapter(mArrayAdapter);
-                //pairedListView.setAdapter(new ArrayAdapter<String>(context,android.R.layout.support_simple_spinner_dropdown_item, devicesList));
             }
         }
     };
 
-    private void getmac( String macdir ) {
-        mac_address=macdir;
-    }
 
-    public void getDevices() {
-        pairedListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String s = pairedListView.getItemAtPosition(i).toString();
-                getmac(s);
-            }
-        });
-    }
 }

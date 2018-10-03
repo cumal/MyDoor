@@ -28,7 +28,6 @@ public class Main3Activity extends AppCompatActivity {
         MacDevice = iin.getStringExtra("MacDevice");
 
         BTAdapter = BluetoothAdapter.getDefaultAdapter();
-        // Phone does not support Bluetooth so let the user know and exit.
         if (BTAdapter == null) {
         new AlertDialog.Builder(this)
                 .setTitle("Not compatible")
@@ -49,10 +48,7 @@ public class Main3Activity extends AppCompatActivity {
         }
 }
 
-    /** Called when the user taps the Send button */
     public void sendMessage(View view) throws IOException {
-        // Do something in response to button
-
         EditText et = findViewById(R.id.editText);
         String txt = et.getText().toString();
 

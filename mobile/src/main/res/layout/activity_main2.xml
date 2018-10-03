@@ -15,7 +15,7 @@
         android:layout_marginTop="82dp"
         android:backgroundTint="?android:attr/colorFocusedHighlight"
         android:onClick="openDoor"
-        android:text="Open"
+        android:text="@string/open"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="121dp"
         android:onClick="cancelConn"
-        android:text="CANCEL"
+        android:text="@string/cancel"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />

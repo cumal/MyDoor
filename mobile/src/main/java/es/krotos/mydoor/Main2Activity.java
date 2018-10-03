@@ -65,9 +65,7 @@ public class Main2Activity extends AppCompatActivity {
         BTAdapter.cancelDiscovery();
         Set<BluetoothDevice> pairedDevices = BTAdapter.getBondedDevices();
         if (pairedDevices.size() > 0) {
-            // Loop through paired devices
             for (BluetoothDevice device : pairedDevices) {
-                // Add the name and address to an array adapter to show in a ListView
                 if (Objects.equals(device.getAddress(), myDoor_mac)) {
                     myDoor = device;
                     Toast.makeText(getBaseContext(),"Device: " + device.getName(), Toast.LENGTH_SHORT).show();
@@ -93,7 +91,6 @@ public class Main2Activity extends AppCompatActivity {
         Toast.makeText(getBaseContext(), "Connecting", Toast.LENGTH_SHORT).show();
         BluetoothSocket tmp = null;
         try {
-            // MY_UUID is the app's UUID string, also used by the server code
             tmp = myDoor.createRfcommSocketToServiceRecord(BTMODULEUUID);
         } catch (IOException e) {
             Toast.makeText(getBaseContext(),"Cannot create socket", Toast.LENGTH_SHORT).show();
@@ -106,8 +103,6 @@ public class Main2Activity extends AppCompatActivity {
             Integer count = 0;
             while (count < reps && !sent) {
                 try {
-                    // Connect the device through the socket. This will block
-                    // until it succeeds or throws an exception
                     BTSocket.connect();
                     if (BTSocket.isConnected()) {
                         Toast.makeText(getBaseContext(), "Connected", Toast.LENGTH_SHORT).show();
@@ -170,14 +165,5 @@ public class Main2Activity extends AppCompatActivity {
         }
     }
 
-    public void write(View view) throws IOException {
-        String s = "*HELOO#";
-        Integer a = 12;
-        mmOutStream.write(s.getBytes());
-
-        //mmOutStream.write(a.byteValue());
-        String input = mmInStream.toString();
-        Toast.makeText(getBaseContext(),input, Toast.LENGTH_SHORT).show();
-    }
 }
 
