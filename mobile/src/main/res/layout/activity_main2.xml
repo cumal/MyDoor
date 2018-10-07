@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:screenOrientation="portrait"
     android:theme="@android:style/Theme.Material.Wallpaper.NoTitleBar"
     tools:context="es.krotos.mydoor.Main2Activity"
     tools:layout_editor_absoluteY="81dp">
