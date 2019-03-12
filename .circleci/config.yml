@@ -6,8 +6,8 @@ jobs:
     steps:
       - checkout
       - run: ls -lah
-      - run: '''./gradlew sonarqube \
+      - run: ./gradlew sonarqube \
   -Dsonar.projectKey=cumal_MyDoor \
   -Dsonar.organization=cumal-github \
   -Dsonar.host.url=https://sonarcloud.io \
-  -Dsonar.login=c8013ba71574aaf84edaaf67c8470546bce85cce'''
+  -Dsonar.login=c8013ba71574aaf84edaaf67c8470546bce85cce
