@@ -5,7 +5,7 @@ jobs:
       - image: circleci/android:api-28-alpha
     steps:
       - checkout
-      - run: echo "A first hello"
+      - run: ls -lah
       - run: '''./gradlew sonarqube \
   -Dsonar.projectKey=cumal_MyDoor \
   -Dsonar.organization=cumal-github \
