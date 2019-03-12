@@ -2,7 +2,7 @@ version: 0
 jobs:
   build:
     docker:
-      - image: circleci/android:api-28-alpha
+      - image: circleci/android:api-26
     steps:
       - checkout
       - run: ls -lah
