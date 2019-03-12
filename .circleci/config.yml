@@ -6,7 +6,7 @@ jobs:
     steps:
       - checkout
       - run: echo "A first hello"
-      - command: '''./gradlew sonarqube \
+      - run: '''./gradlew sonarqube \
   -Dsonar.projectKey=cumal_MyDoor \
   -Dsonar.organization=cumal-github \
   -Dsonar.host.url=https://sonarcloud.io \
